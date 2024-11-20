@@ -1,7 +1,6 @@
 import express from "express";
 import products from './routes/products.router.js'
-// import cards from './routes/card.router.js'
-// import __dirname from "./utils.js";
+import cartsRouter from './routes/carts.router.js';
 
 
 const app = express();
@@ -20,8 +19,8 @@ app.get('/ping',(req,res)=>{
 })
 
 //Routes
-app.use("/producs",products)
-// app.use("/cards",cards)
+app.use("api/producs",products);
+app.use("api/carts",cartsRouter);
 
 app.listen(PORT,()=>{
     console.log(`Server corriendo en el puerto ${PORT}`);
